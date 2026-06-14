@@ -4,11 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ติดต่อฉัน | Contact Me</title>
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- Google Fonts (Sarabun & Inter) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -118,37 +115,44 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between items-center text-gray-200 py-12 px-4 selection:bg-indigo-500/30">
 
-    <!-- Toast Notification (Custom Notification inside iframe friendly) -->
-    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 -translate-y-4 scale-95 opacity-0 pointer-events-none transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-emerald-500/90 text-white px-5 py-3 rounded-2xl shadow-xl shadow-emerald-950/20 backdrop-blur-md">
-        <i class="fa-solid fa-circle-check text-xl"></i>
-        <span id="toast-message" class="text-sm font-medium">คัดลอกเรียบร้อยแล้ว!</span>
+    <div id="toast" class="fixed top-6 left-1/2 -translate-x-1/2 -translate-y-4 scale-95 opacity-0 pointer-events-none transition-all duration-300 ease-out z-50 flex items-center gap-3 bg-indigo-500 text-white px-5 py-3 rounded-2xl shadow-xl shadow-indigo-950/20 backdrop-blur-md border border-indigo-400">
+        <i id="toast-icon" class="fa-solid fa-paper-plane text-lg"></i>
+        <span id="toast-message" class="text-sm font-medium">เตรียมส่งเมล...</span>
     </div>
 
-    <!-- Main Container -->
     <main class="w-full max-w-md flex-grow flex flex-col justify-center items-center py-6">
         
-        <!-- Profile Header Section -->
         <div class="text-center mb-8 animate-fade-down">
-            <!-- Profile Avatar Glow Container -->
-            <div class="relative w-28 h-28 mx-auto mb-5 group">
-                <div class="absolute inset-0 bg-gradient-to-tr from-blue-500 via-indigo-500 to-pink-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-700 group-hover:duration-200" style="animation: pulseGlow 4s infinite ease-in-out;"></div>
-                <div class="relative w-full h-full rounded-full bg-[#0f172a] p-1 flex items-center justify-center overflow-hidden border border-white/10">
-                    <!-- Standard Avatar Icon if no image -->
-                    <span class="text-4xl text-transparent bg-clip-text bg-gradient-to-tr from-blue-400 to-indigo-300 font-bold">PM</span>
+            <div class="relative w-32 h-32 mx-auto mb-5 group">
+                <div class="absolute inset-0 bg-gradient-to-tr from-blue-500 via-indigo-500 to-pink-500 rounded-full blur-md opacity-75 group-hover:opacity-100 transition duration-700 group-hover:duration-200" style="animation: pulseGlow 4s infinite ease-in-out;"></div>
+                <div class="relative w-full h-full rounded-full bg-[#0f172a] p-1.5 flex items-center justify-center overflow-hidden border border-white/10 shadow-inner">
+                    <svg viewBox="0 0 100 100" class="w-full h-full object-cover rounded-full shadow-lg">
+                      <defs>
+                        <linearGradient id="gradientAvatar" x1="0%" y1="0%" x2="100%" y2="100%">
+                          <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+                          <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+                        </linearGradient>
+                      </defs>
+                      <circle cx="50" cy="50" r="50" fill="#111827"/>
+                      <path d="M50 25a18 18 0 1 1 0 36 18 18 0 0 1 0-36zm0 4a14 14 0 1 0 0 28 14 14 0 0 0 0-28z" fill="#f3f4f6"/>
+                      <circle cx="44" cy="38" r="1.5" fill="#111827"/>
+                      <circle cx="56" cy="38" r="1.5" fill="#111827"/>
+                      <path d="M44 48c4 4 8 4 12 0" fill="none" stroke="#111827" stroke-width="2" stroke-linecap="round"/>
+                      <path d="M15 80c0-15 15-20 35-20s35 5 35 20" fill="url(#gradientAvatar)"/>
+                      <circle cx="50" cy="50" r="48" fill="none" stroke="url(#gradientAvatar)" stroke-width="3" stroke-dasharray="10 5" opacity="0.6"/>
+                    </svg>
                 </div>
             </div>
             
             <h1 class="text-3xl font-bold tracking-wide bg-clip-text text-transparent bg-gradient-to-r from-white via-gray-100 to-gray-400">
-                ติดต่อฉัน
+                Phisaphat M.
             </h1>
             <p class="text-gray-400 mt-2 text-sm tracking-wider font-light uppercase">Contact Me</p>
             <div class="w-12 h-1 bg-gradient-to-r from-indigo-500 to-pink-500 mx-auto mt-4 rounded-full"></div>
         </div>
 
-        <!-- Links List -->
         <div class="w-full space-y-4">
             
-            <!-- 1. FACEBOOK BUTTON -->
             <a href="https://www.facebook.com/share/1BNe4vbzox/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" 
                class="animate-fade-up block w-full group relative glow-effect" style="animation-delay: 150ms;">
                 <div class="glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 hover:translate-y-[-2px] hover:bg-slate-900/60 hover:border-blue-500/50">
@@ -167,7 +171,6 @@
                 </div>
             </a>
 
-            <!-- 2. INSTAGRAM BUTTON -->
             <a href="https://www.instagram.com/bexm_ix?igsh=MXFibnhra3BjbjFvZg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" 
                class="animate-fade-up block w-full group relative glow-effect" style="animation-delay: 250ms;">
                 <div class="glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 hover:translate-y-[-2px] hover:bg-slate-900/60 hover:border-pink-500/50">
@@ -186,7 +189,6 @@
                 </div>
             </a>
 
-            <!-- 3. LINE BUTTON (DIRECT ACCESS) -->
             <a href="https://line.me/ti/p/Ps4OwloSoe" target="_blank" rel="noopener noreferrer" 
                class="animate-fade-up block w-full group relative glow-effect" style="animation-delay: 350ms;">
                 <div class="glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 hover:translate-y-[-2px] hover:bg-slate-900/60 hover:border-emerald-500/50">
@@ -205,8 +207,9 @@
                 </div>
             </a>
 
-            <!-- 4. GMAIL BUTTON (WITH COPY INTERACTION) -->
-            <div class="animate-fade-up w-full group relative glow-effect" style="animation-delay: 450ms;">
+            <a href="mailto:peerapatmatprasong@gmail.com" target="_blank" rel="noopener noreferrer"
+               onclick="handleGmailAction(event)"
+               class="animate-fade-up block w-full group relative glow-effect" style="animation-delay: 450ms;">
                 <div class="glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 hover:translate-y-[-2px] hover:bg-slate-900/60 hover:border-rose-500/50">
                     <div class="flex items-center gap-4 min-w-0">
                         <div class="w-12 h-12 rounded-xl bg-rose-600/10 border border-rose-500/20 flex items-center justify-center text-rose-500 text-xl transition-all duration-300 group-hover:scale-110 group-hover:bg-rose-500 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(244,63,94,0.4)] shrink-0">
@@ -217,19 +220,12 @@
                             <p class="text-base font-semibold text-gray-200 group-hover:text-white transition-colors truncate pr-2">peerapatmatprasong@gmail.com</p>
                         </div>
                     </div>
-                    <!-- Direct Action Buttons -->
-                    <div class="flex gap-2">
-                        <button onclick="copyToClipboard('peerapatmatprasong@gmail.com', 'คัดลอกอีเมลแล้ว!')" title="คัดลอกอีเมล" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all duration-200">
-                            <i class="fa-regular fa-copy text-xs"></i>
-                        </button>
-                        <a href="mailto:peerapatmatprasong@gmail.com" title="ส่งอีเมลทันที" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-rose-400 hover:bg-rose-500/10 transition-all duration-200">
-                            <i class="fa-solid fa-paper-plane text-xs"></i>
-                        </a>
+                    <div class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-500 group-hover:text-rose-400 group-hover:bg-rose-500/10 transition-all duration-300">
+                        <i class="fa-solid fa-paper-plane text-xs transition-transform duration-300 group-hover:rotate-12"></i>
                     </div>
                 </div>
-            </div>
+            </a>
 
-            <!-- 5. PHONE BUTTON (WITH CALL & COPY INTERACTION) -->
             <div class="animate-fade-up w-full group relative glow-effect" style="animation-delay: 550ms;">
                 <div class="glass-card rounded-2xl p-4 flex items-center justify-between transition-all duration-300 hover:translate-y-[-2px] hover:bg-slate-900/60 hover:border-amber-500/50">
                     <div class="flex items-center gap-4">
@@ -241,9 +237,8 @@
                             <p class="text-base font-semibold text-gray-200 group-hover:text-white transition-colors">098-345-2076</p>
                         </div>
                     </div>
-                    <!-- Direct Action Buttons -->
                     <div class="flex gap-2">
-                        <button onclick="copyToClipboard('0983452076', 'คัดลอกเบอร์โทรแล้ว!')" title="คัดลอกเบอร์โทรศัพท์" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-200">
+                        <button onclick="copyToClipboard('0983452076', 'fa-phone-flip', 'คัดลอกเบอร์โทรแล้ว!')" title="คัดลอกเบอร์โทรศัพท์" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-200">
                             <i class="fa-regular fa-copy text-xs"></i>
                         </button>
                         <a href="tel:098-345-2076" title="โทรเลย" class="w-8 h-8 rounded-full bg-white/5 flex items-center justify-center text-gray-400 hover:text-amber-400 hover:bg-amber-500/10 transition-all duration-200">
@@ -257,54 +252,73 @@
 
     </main>
 
-    <!-- Footer Area -->
     <footer class="w-full text-center text-xs text-gray-600 tracking-wider mt-12 mb-2">
         <p class="mb-1">&copy; 2026 PHIRAPHAT. All Rights Reserved.</p>
         <p class="text-gray-700">Designed with elegance & precision</p>
     </footer>
 
-    <!-- Clipboard and UX Script -->
     <script>
-        function copyToClipboard(text, message) {
-            // Create a temporary input element for execution
+        // Check for Gmail action (Android compatibility toast)
+        function handleGmailAction(event) {
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            let message, iconClass;
+
+            if (isAndroid) {
+                iconClass = 'fa-paper-plane';
+                message = 'กำลังเลือกแอปเมล...';
+            } else if (isIOS) {
+                iconClass = 'fa-paper-plane';
+                message = 'กำลังเปิดแอปเมล...';
+            } else {
+                iconClass = 'fa-envelope-open-text';
+                message = 'เปิดหน้าเขียนเมล...';
+            }
+
+            showToast(iconClass, message);
+        }
+
+        // Standard Copy Functionality (Phone Button)
+        function copyToClipboard(text, iconClass, message) {
             const tempInput = document.createElement('input');
             tempInput.value = text;
             document.body.appendChild(tempInput);
             tempInput.select();
-            tempInput.setSelectionRange(0, 99999); // For mobile devices
+            tempInput.setSelectionRange(0, 99999);
 
             try {
-                // Execute standard copy command (works reliably in sandboxed environments/iframes)
                 const success = document.execCommand('copy');
                 if (success) {
-                    showToast(message);
+                    showToast(iconClass, message);
                 } else {
-                    fallbackClipboard(text, message);
+                    fallbackClipboard(text, iconClass, message);
                 }
             } catch (err) {
-                fallbackClipboard(text, message);
+                fallbackClipboard(text, iconClass, message);
             }
             
             document.body.removeChild(tempInput);
         }
 
-        function fallbackClipboard(text, message) {
-            // Modern Clipboard API fallback
+        function fallbackClipboard(text, iconClass, message) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text)
-                    .then(() => showToast(message))
+                    .then(() => showToast(iconClass, message))
                     .catch(() => alert('ไม่สามารถคัดลอกได้โดยอัตโนมัติ กรุณาคัดลอกด้วยตนเอง'));
             }
         }
 
-        function showToast(message) {
+        // Common Toast Display function
+        function showToast(iconClass, message) {
             const toast = document.getElementById('toast');
+            const toastIcon = document.getElementById('toast-icon');
             const toastMsg = document.getElementById('toast-message');
             
+            toastIcon.className = `fa-solid ${iconClass} text-lg`;
             toastMsg.innerText = message;
             toast.classList.add('toast-active');
             
-            // Auto hide toast after 2.5 seconds
             setTimeout(() => {
                 toast.classList.remove('toast-active');
             }, 2500);
